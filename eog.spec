@@ -1,6 +1,6 @@
 Summary:	The Eye of GNOME image viewer
 Name:     	eog
-Version: 2.18.0.1
+Version: 2.18.1
 Release: %mkrel 1
 License:	GPL
 Group:		Graphical desktop/GNOME
@@ -15,7 +15,7 @@ BuildRequires:	libgnomeprintui-devel >= 2.2
 BuildRequires:	scrollkeeper >= 0.3
 BuildRequires:  libexif-devel
 BuildRequires:  eel-devel
-BuildRequires:  gnome-doc-utils libxslt-proc
+BuildRequires:  gnome-doc-utils
 BuildRequires:  perl-XML-Parser
 BuildRequires:  desktop-file-utils
 Requires(post): scrollkeeper >= 0.3 desktop-file-utils
@@ -100,5 +100,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/omf/eog/*-C.omf
 %{_datadir}/pixmaps/*
 %{_menudir}/*
-
-
