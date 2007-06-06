@@ -1,6 +1,6 @@
 Summary:	The Eye of GNOME image viewer
 Name:     	eog
-Version: 2.18.2
+Version: 2.19.3
 Release: %mkrel 1
 License:	GPL
 Group:		Graphical desktop/GNOME
@@ -12,6 +12,7 @@ BuildRequires:	libglade2.0-devel
 BuildRequires:	libgnomeui2-devel >= 2.5.5
 BuildRequires:	librsvg-devel >= 2.0.0
 BuildRequires:	libgnomeprintui-devel >= 2.2
+BuildRequires:	liblcms-devel
 BuildRequires:	scrollkeeper >= 0.3
 BuildRequires:  libexif-devel
 BuildRequires:  eel-devel
@@ -29,6 +30,20 @@ to be a fast and functional image viewer as well as an image
 cataloging program. It does proper handling of large images and
 images with full opacity information, and can zoom and scroll
 images quickly while keeping  memory usage constant.
+
+%package devel
+Group: Development/C
+Summary: C headers needed to build EOG plugins
+
+%description devel
+This is the Eye of Gnome, an image viewer program. It is meant
+to be a fast and functional image viewer as well as an image
+cataloging program. It does proper handling of large images and
+images with full opacity information, and can zoom and scroll
+images quickly while keeping  memory usage constant.
+
+Install this if you want to build EOG plugins.
+
 
 %prep
 %setup -q
@@ -90,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(-, root, root)
-%doc AUTHORS COPYING ChangeLog INSTALL NEWS README
+%doc AUTHORS NEWS README
 %{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
 %{_datadir}/applications/*
@@ -98,5 +113,10 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/icons/hicolor/*/*/*
 %dir %{_datadir}/omf/eog
 %{_datadir}/omf/eog/*-C.omf
-%{_datadir}/pixmaps/*
 %{_menudir}/*
+
+%files devel
+%defattr(-, root, root)
+%doc ChangeLog
+%_includedir/eog
+%_libdir/pkgconfig/eog.pc
