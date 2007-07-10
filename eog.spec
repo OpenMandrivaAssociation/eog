@@ -1,7 +1,7 @@
 Summary:	The Eye of GNOME image viewer
 Name:     	eog
-Version: 2.19.3
-Release: %mkrel 2
+Version: 2.19.4
+Release: %mkrel 1
 License:	GPL
 Group:		Graphical desktop/GNOME
 Source: 	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
@@ -16,6 +16,7 @@ BuildRequires:	liblcms-devel
 BuildRequires:	scrollkeeper >= 0.3
 BuildRequires:  libexif-devel
 BuildRequires:  eel-devel
+BuildRequires:  pygtk2.0-devel
 BuildRequires:  gnome-doc-utils
 BuildRequires:  perl-XML-Parser
 BuildRequires:  desktop-file-utils
@@ -23,6 +24,7 @@ Requires(post): scrollkeeper >= 0.3 desktop-file-utils
 Requires(postun): scrollkeeper >= 0.3 desktop-file-utils
 Requires: librsvg
 Requires: gnome-icon-theme
+Requires: pygtk2.0 gnome-python-gnomevfs
 
 %description
 This is the Eye of Gnome, an image viewer program. It is meant
@@ -109,6 +111,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
 %{_datadir}/applications/*
+%_datadir/pixmaps/eog
 %{_datadir}/eog
 %_datadir/icons/hicolor/*/*/*
 %dir %{_datadir}/omf/eog
@@ -118,5 +121,5 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(-, root, root)
 %doc ChangeLog
-%_includedir/eog
+%_includedir/eog-2.20
 %_libdir/pkgconfig/eog.pc
