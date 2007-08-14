@@ -12,7 +12,7 @@ BuildRequires:	libglade2.0-devel
 BuildRequires:	libgnomeui2-devel >= 2.5.5
 BuildRequires:	librsvg-devel >= 2.0.0
 BuildRequires:	libgnomeprintui-devel >= 2.2
-BuildRequires:	liblcms-devel
+BuildRequires:	lcms-devel
 BuildRequires:	scrollkeeper >= 0.3
 BuildRequires:  libexif-devel
 BuildRequires:  eel-devel
