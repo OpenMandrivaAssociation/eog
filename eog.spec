@@ -1,6 +1,6 @@
 Summary:	The Eye of GNOME image viewer
 Name:     	eog
-Version: 2.19.5
+Version: 2.19.91
 Release: %mkrel 1
 License:	GPL
 Group:		Graphical desktop/GNOME
@@ -111,7 +111,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
 %{_datadir}/applications/*
-%_datadir/pixmaps/eog
 %{_datadir}/eog
 %_datadir/icons/hicolor/*/*/*
 %dir %{_datadir}/omf/eog
