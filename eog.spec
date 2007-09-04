@@ -1,6 +1,6 @@
 Summary:	The Eye of GNOME image viewer
 Name:     	eog
-Version: 2.19.91
+Version: 2.19.92
 Release: %mkrel 1
 License:	GPL
 Group:		Graphical desktop/GNOME
@@ -17,6 +17,7 @@ BuildRequires:	scrollkeeper >= 0.3
 BuildRequires:  libexif-devel
 BuildRequires:  eel-devel
 BuildRequires:  pygtk2.0-devel
+BuildRequires:  gnome-python
 BuildRequires:  gnome-doc-utils
 BuildRequires:  perl-XML-Parser
 BuildRequires:  desktop-file-utils
