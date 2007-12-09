@@ -71,13 +71,6 @@ echo "%lang($(basename $omf|sed -e s/eog-// -e s/.omf//)) $(echo $omf|sed -e s!%
 done
 
 # Menu
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat >$RPM_BUILD_ROOT%{_menudir}/%{name} <<EOF
-?package(%{name}): command="%{_bindir}/%{name}" needs="gnome" \
-icon="image-viewer.png" section="Multimedia/Graphics" \
-title="Eye of Gnome" longtitle="Eye of Gnome Image Viewer" \
-startup_notify="true" xdg="true"
-EOF
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-category="X-MandrivaLinux-Multimedia-Graphics" \
@@ -116,7 +109,6 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/icons/hicolor/*/*/*
 %dir %{_datadir}/omf/eog
 %{_datadir}/omf/eog/*-C.omf
-%{_menudir}/*
 
 %files devel
 %defattr(-, root, root)
