@@ -20,7 +20,6 @@ BuildRequires:  pygtk2.0-devel
 BuildRequires:  gnome-python
 BuildRequires:  gnome-doc-utils
 BuildRequires:  perl-XML-Parser
-BuildRequires:  desktop-file-utils
 Requires(post): scrollkeeper >= 0.3 desktop-file-utils
 Requires(postun): scrollkeeper >= 0.3 desktop-file-utils
 Requires: librsvg
@@ -69,12 +68,6 @@ GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
 for omf in %buildroot%_datadir/omf/eog/eog-??*.omf;do 
 echo "%lang($(basename $omf|sed -e s/eog-// -e s/.omf//)) $(echo $omf|sed -e s!%buildroot!!)" >> %name.lang
 done
-
-# Menu
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --add-category="X-MandrivaLinux-Multimedia-Graphics" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 
 rm -rf %buildroot/var/lib/scrollkeeper
