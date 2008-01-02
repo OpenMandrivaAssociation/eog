@@ -7,6 +7,7 @@ Group:		Graphical desktop/GNOME
 Source: 	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://www.gnome.org/
 
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libglade2.0-devel
 BuildRequires:	libgnomeui2-devel >= 2.5.5
 BuildRequires:	librsvg-devel >= 2.0.0
