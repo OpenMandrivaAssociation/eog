@@ -1,14 +1,10 @@
 Summary:	The Eye of GNOME image viewer
 Name:     	eog
-Version: 2.21.3
-Release: %mkrel 2
+Version: 2.21.4
+Release: %mkrel 1
 License:	GPL
 Group:		Graphical desktop/GNOME
 Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
-# (fc) 2.21.3-2mdv fix color profile loading from EXIF (SVN)
-Patch0:		eog-2.21.3-fixexifprofile.patch
-# (fc) 2.21.3-2mdv fix screen profile reading (GNOME bug #507068)
-Patch1:		eog-2.21.3-fixscreenprofile.patch
 URL:		http://www.gnome.org/projects/eog/
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -53,8 +49,6 @@ Install this if you want to build EOG plugins.
 
 %prep
 %setup -q
-%patch0 -p1 -b .fixexifprofile
-%patch1 -p1 -b .fixscreenprofile
 
 %build
 
