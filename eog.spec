@@ -1,6 +1,6 @@
 Summary:	The Eye of GNOME image viewer
 Name:     	eog
-Version: 2.21.4
+Version: 2.21.90
 Release: %mkrel 1
 License:	GPL
 Group:		Graphical desktop/GNOME
