@@ -11,7 +11,6 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libglade2.0-devel
 BuildRequires:	libgnomeui2-devel >= 2.5.5
 BuildRequires:	librsvg-devel >= 2.0.0
-BuildRequires:	libgnomeprintui-devel >= 2.2
 BuildRequires:	lcms-devel
 BuildRequires:	scrollkeeper >= 0.3
 BuildRequires:  libexif-devel
