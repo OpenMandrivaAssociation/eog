@@ -76,21 +76,25 @@ rm -rf %buildroot/var/lib/scrollkeeper
 rm -rf $RPM_BUILD_ROOT
 
 
+%if %mdkversion < 200900
 %post  
 %{update_menus}
 %update_scrollkeeper
 %update_desktop_database
 %post_install_gconf_schemas %name
 %update_icon_cache hicolor
+%endif
 
 %preun
 %preun_uninstall_gconf_schemas %name
 
+%if %mdkversion < 200900
 %postun
 %clean_scrollkeeper
 %{clean_menus}
 %clean_desktop_database
 %clean_icon_cache hicolor
+%endif
 
 %files -f %{name}.lang
 %defattr(-, root, root)
