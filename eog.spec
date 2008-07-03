@@ -1,6 +1,6 @@
 Summary:	The Eye of GNOME image viewer
 Name:     	eog
-Version: 2.22.3
+Version: 2.23.4.1
 Release: %mkrel 1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
@@ -19,7 +19,8 @@ BuildRequires:  exempi-devel
 BuildRequires:  pygtk2.0-devel
 BuildRequires:  gnome-python-devel
 BuildRequires:  gnome-doc-utils
-BuildRequires:  intltool
+BuildRequires:  gtk-doc
+BuildRequires:  intltool >= 0.40.0
 Requires(post): scrollkeeper >= 0.3 desktop-file-utils
 Requires(postun): scrollkeeper >= 0.3 desktop-file-utils
 Requires: librsvg
@@ -70,7 +71,8 @@ echo "%lang($(basename $omf|sed -e s/eog-// -e s/.omf//)) $(echo $omf|sed -e s!%
 done
 
 
-rm -rf %buildroot/var/lib/scrollkeeper
+rm -rf %buildroot%_libdir/eog/plugins/*a \
+   %buildroot/var/lib/scrollkeeper
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -106,9 +108,16 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/icons/hicolor/*/*/*
 %dir %{_datadir}/omf/eog
 %{_datadir}/omf/eog/*-C.omf
+%dir %_libdir/eog
+%dir %_libdir/eog/plugins
+%_libdir/eog/plugins/fullscreen.eog-plugin
+%_libdir/eog/plugins/reload.eog-plugin
+%_libdir/eog/plugins/statusbar-date.eog-plugin
+%_libdir/eog/plugins/*.so*
 
 %files devel
 %defattr(-, root, root)
 %doc ChangeLog
 %_includedir/eog-2.20
 %_libdir/pkgconfig/eog.pc
+%_datadir/gtk-doc/html/eog
