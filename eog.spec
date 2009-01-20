@@ -16,6 +16,7 @@ BuildRequires:  libexif-devel
 BuildRequires:  exempi-devel
 BuildRequires:  pygtk2.0-devel
 BuildRequires:  gnome-python-devel
+BuildRequires:  gnome-desktop-devel
 BuildRequires:  gnome-doc-utils
 BuildRequires:  gtk-doc
 BuildRequires:  intltool >= 0.40.0
