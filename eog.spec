@@ -14,6 +14,7 @@ BuildRequires:	librsvg-devel >= 2.0.0
 BuildRequires:	lcms-devel
 BuildRequires:	scrollkeeper >= 0.3
 BuildRequires:  libexif-devel
+BuildRequires:  libjpeg-devel
 BuildRequires:  exempi-devel
 BuildRequires:  pygtk2.0-devel
 BuildRequires:  gnome-python-devel
