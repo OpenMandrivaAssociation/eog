@@ -10,6 +10,7 @@ Group:		Graphical desktop/GNOME
 URL:		http://www.gnome.org/projects/eog/
 Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 
+BuildRequires:	glib2.0-common
 BuildRequires:	gnome-doc-utils
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	jpeg-devel
