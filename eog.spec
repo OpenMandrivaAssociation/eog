@@ -22,13 +22,13 @@ BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(gnome-desktop-3.0) >= 2.91.2
 BuildRequires:	pkgconfig(gsettings-desktop-schemas) >= 2.91.92
 BuildRequires:	pkgconfig(libpeas-1.0) >= 0.7.4
+BuildRequires:	pkgconfig(libpeas-gtk-1.0)
 BuildRequires:	pkgconfig(gnome-icon-theme)
 BuildRequires:	pkgconfig(shared-mime-info)
 
+Requires: gsettings-desktop-schemas
 Requires: librsvg
 Requires: gnome-icon-theme
-Requires: pygtk2.0
-Requires: gnome-python-gnomevfs
 
 %description
 This is the Eye of Gnome, an image viewer program. It is meant
@@ -65,37 +65,27 @@ The packages contains the development files for %{name}.
 
 %make
 
-
 %install
 rm -rf %{buildroot} %{name}.lang
 
 %makeinstall_std
-%{find_lang} %{name} --with-gnome
-
-for omf in %{buildroot}%{_datadir}/omf/eog/eog-??*.omf;do 
-echo "%lang($(basename $omf|sed -e s/eog-// -e s/.omf//)) $(echo $omf|sed -e s!%{buildroot}!!)" >> %{name}.lang
-done
-
-# remove unpackaged files
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
-
-%preun
-%preun_uninstall_gconf_schemas %{name}
+%{find_lang} %{name} --with-gnome
 
 %files -f %{name}.lang
 %doc AUTHORS NEWS README
-%{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/eog
 %{_datadir}/icons/hicolor/*/*/*
-%dir %{_datadir}/omf/eog
-%{_datadir}/omf/eog/*-C.omf
+%{_datadir}/GConf/gsettings/eog.convert
+%{_datadir}/glib-2.0/schemas/org.gnome.eog.enums.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.eog.gschema.xml
 %dir %{_libdir}/eog
 %dir %{_libdir}/eog/plugins
-%{_libdir}/eog/plugins/fullscreen.eog-plugin
-%{_libdir}/eog/plugins/reload.eog-plugin
-%{_libdir}/eog/plugins/statusbar-date.eog-plugin
+%{_libdir}/eog/plugins/fullscreen.plugin
+%{_libdir}/eog/plugins/reload.plugin
+%{_libdir}/eog/plugins/statusbar-date.plugin
 %{_libdir}/eog/plugins/*.so*
 
 %files -n %{girname}
