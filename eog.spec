@@ -1,8 +1,6 @@
 %define gi_major 3.0
 %define girname %mklibname %{name}-gir %{gi_major}
 
-%define url_ver	%(echo %{version}|cut -d. -f1,2)
-
 Summary:	The Eye of GNOME image viewer
 Name:		eog
 Version:	3.4.1
@@ -10,18 +8,18 @@ Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 URL:		http://www.gnome.org/projects/eog/
-Source0: 	http://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
+Source0: 	http://download.gnome.org/sources/%{name}/%{name}-%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
-BuildRequires: gnome-doc-utils
 BuildRequires: intltool >= 0.40.0
 BuildRequires: jpeg-devel
 BuildRequires: pkgconfig(exempi-2.0)
 BuildRequires: pkgconfig(gdk-pixbuf-2.0)
-BuildRequires: pkgconfig(gobject-introspection-1.0)
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(gnome-desktop-3.0)
+BuildRequires: pkgconfig(gnome-doc-utils)
 BuildRequires: pkgconfig(gnome-icon-theme)
+BuildRequires: pkgconfig(gobject-introspection-1.0)
 BuildRequires: pkgconfig(gsettings-desktop-schemas)
 BuildRequires: pkgconfig(gtk+-3.0)
 BuildRequires: pkgconfig(lcms2)
