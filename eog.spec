@@ -3,15 +3,15 @@
 
 Summary:	The Eye of GNOME image viewer
 Name:		eog
-Version:	3.4.3
+Version:	3.6.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 URL:		http://www.gnome.org/projects/eog/
-Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
+Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/3.6/%{name}-%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
-BuildRequires:	intltool >= 0.40.0
+BuildRequires:	intltool >= 0.40.0 itstool
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(exempi-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
@@ -108,4 +108,3 @@ find %{buildroot} -name *.la -delete
 %doc %{_datadir}/gtk-doc/html/eog
 %{_includedir}/eog-3.0
 %{_libdir}/pkgconfig/eog.pc
-
