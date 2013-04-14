@@ -1,5 +1,6 @@
 %define gi_major 3.0
 %define girname %mklibname %{name}-gir %{gi_major}
+%define _disable_ld_no_undefined 1
 
 Summary:	The Eye of GNOME image viewer
 Name:		eog
