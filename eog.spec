@@ -1,6 +1,8 @@
+%define _disable_ld_no_undefined 1
+%define url_ver %(echo %{version}|cut -d. -f1,2)
+
 %define gi_major 3.0
 %define girname %mklibname %{name}-gir %{gi_major}
-%define _disable_ld_no_undefined 1
 
 Summary:	The Eye of GNOME image viewer
 Name:		eog
@@ -8,11 +10,12 @@ Version:	3.6.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
-URL:		http://www.gnome.org/projects/eog/
-Source0: 	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/3.6/%{name}-%{version}.tar.xz
+Url:		http://www.gnome.org/projects/eog/
+Source0: 	http://ftp.gnome.org/pub/GNOME/sources/eog/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
-BuildRequires:	intltool >= 0.40.0 itstool
+BuildRequires:	intltool >= 0.40.0
+BuildRequires:	itstool
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(exempi-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
@@ -30,8 +33,8 @@ BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(shared-mime-info)
 BuildRequires:	pkgconfig(x11)
-Requires:	librsvg
 Requires:	gnome-icon-theme
+Requires:	librsvg
 
 %description
 This is the Eye of Gnome, an image viewer program. It is meant
@@ -84,8 +87,6 @@ desktop-file-install --vendor="" \
 
 %find_lang %{name} --with-gnome
 
-find %{buildroot} -name *.la -delete
-
 %files -f %{name}.lang
 %doc AUTHORS NEWS README
 %{_bindir}/*
@@ -100,7 +101,7 @@ find %{buildroot} -name *.la -delete
 %{_datadir}/glib-2.0/schemas/org.gnome.eog.gschema.xml
 %{_datadir}/applications/*
 %{_datadir}/eog
-%{_datadir}/icons/hicolor/*/*/*
+%{_iconsdir}/hicolor/*/*/*
 
 %files -n %{girname}
 %{_libdir}/eog/girepository-1.0/Eog-%{gi_major}.typelib
@@ -109,3 +110,4 @@ find %{buildroot} -name *.la -delete
 %doc %{_datadir}/gtk-doc/html/eog
 %{_includedir}/eog-3.0
 %{_libdir}/pkgconfig/eog.pc
+
