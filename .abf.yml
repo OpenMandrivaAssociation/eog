@@ -1,3 +1,4 @@
----
-sources:
+removed_sources:
   eog-3.6.2.tar.xz: df3ac57d81838b279040673b168a7ead9a907190
+sources:
+  eog-3.8.0.tar.xz: 0409754ac224d39da78a9904cd3ebd64d93ae314
