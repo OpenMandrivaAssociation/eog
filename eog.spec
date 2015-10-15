@@ -1,4 +1,6 @@
 %define _disable_ld_no_undefined 1
+%define _disable_rebuild_configure 1
+
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
 %define gi_major 3.0
@@ -6,8 +8,8 @@
 
 Summary:	The Eye of GNOME image viewer
 Name:		eog
-Version:	 3.16.1
-Release:	4
+Version:	3.18.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/projects/eog/
