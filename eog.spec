@@ -74,14 +74,11 @@ Install this if you want to build EOG plugins.
 %apply_patches
 
 %build
-%configure2_5x \
-	--enable-introspection=yes \
-	--disable-schemas-compile \
-	--disable-scrollkeeper
-%make
+%meson -Dgtk_doc=true
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 
 desktop-file-install --vendor="" \
 	--add-category=Graphics \
