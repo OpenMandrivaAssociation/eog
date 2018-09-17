@@ -8,7 +8,7 @@
 
 Summary:	The Eye of GNOME image viewer
 Name:		eog
-Version:	3.18.1
+Version:	3.28.3
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
@@ -35,6 +35,8 @@ BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(shared-mime-info)
 BuildRequires:	pkgconfig(x11)
+BuildRequires:	meson
+BuildRequires:	gtk-doc
 Requires:	gnome-icon-theme
 Requires:	librsvg
 
@@ -72,14 +74,11 @@ Install this if you want to build EOG plugins.
 %apply_patches
 
 %build
-%configure2_5x \
-	--enable-introspection=yes \
-	--disable-schemas-compile \
-	--disable-scrollkeeper
-%make
+%meson -Dgtk_doc=true
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 
 desktop-file-install --vendor="" \
 	--add-category=Graphics \
@@ -99,7 +98,8 @@ desktop-file-install --vendor="" \
 %{_libdir}/eog/plugins/statusbar-date.plugin
 %{_libdir}/eog/libeog.so
 %{_libdir}/eog/plugins/*.so*
-%{_datadir}/appdata/eog.appdata.xml
+#{_datadir}/appdata/eog.appdata.xml
+%{_datadir}/metainfo/%{name}.appdata.xml
 %{_datadir}/GConf/gsettings/eog.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.eog.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.eog.gschema.xml
