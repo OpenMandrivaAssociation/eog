@@ -98,7 +98,8 @@ desktop-file-install --vendor="" \
 %{_libdir}/eog/plugins/statusbar-date.plugin
 %{_libdir}/eog/libeog.so
 %{_libdir}/eog/plugins/*.so*
-%{_datadir}/appdata/eog.appdata.xml
+#{_datadir}/appdata/eog.appdata.xml
+%{_datadir}/metainfo/%{name}.appdata.xml
 %{_datadir}/GConf/gsettings/eog.convert
 %{_datadir}/glib-2.0/schemas/org.gnome.eog.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.eog.gschema.xml
