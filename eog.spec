@@ -35,6 +35,8 @@ BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(shared-mime-info)
 BuildRequires:	pkgconfig(x11)
+BuildRequires:	meson
+BuildRequires:	gtk-doc
 Requires:	gnome-icon-theme
 Requires:	librsvg
 
