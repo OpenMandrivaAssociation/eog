@@ -8,8 +8,8 @@
 
 Summary:	The Eye of GNOME image viewer
 Name:		eog
-Version:	3.28.4
-Release:	2
+Version:	3.32.1
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/projects/eog/
@@ -21,13 +21,17 @@ BuildRequires:	itstool
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(exempi-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(gio-2.0) >= 2.31.0
+BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.0
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gnome-desktop-3.0)
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(adwaita-icon-theme)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
+BuildRequires:	pkgconfig(gthread-2.0) >= 2.31.0
 BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(gtk+-unix-print-3.0) >= 3.5.4
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	pkgconfig(libexif)
 BuildRequires:	pkgconfig(libpeas-gtk-1.0)
@@ -37,7 +41,7 @@ BuildRequires:	pkgconfig(shared-mime-info)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	meson
 BuildRequires:	gtk-doc
-Requires:	gnome-icon-theme
+Requires:	adwaita-icon-theme
 Requires:	librsvg
 
 %description
