@@ -8,7 +8,7 @@
 
 Summary:	The Eye of GNOME image viewer
 Name:		eog
-Version:	3.34.1
+Version:	3.34.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
@@ -75,7 +75,7 @@ Install this if you want to build EOG plugins.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %meson -Dgtk_doc=true
