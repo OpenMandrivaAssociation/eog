@@ -37,6 +37,7 @@ BuildRequires:	pkgconfig(libexif)
 BuildRequires:	pkgconfig(libpeas-gtk-1.0)
 BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libportal)
 BuildRequires:	pkgconfig(shared-mime-info)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	meson
