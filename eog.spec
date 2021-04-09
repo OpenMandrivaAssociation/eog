@@ -94,7 +94,7 @@ desktop-file-install --vendor="" \
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc AUTHORS NEWS README
+%doc AUTHORS NEWS README.md
 %{_bindir}/*
 %dir %{_libdir}/eog
 %dir %{_libdir}/eog/plugins
