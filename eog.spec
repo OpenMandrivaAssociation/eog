@@ -14,6 +14,8 @@ License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/projects/eog/
 Source0: 	http://ftp.gnome.org/pub/GNOME/sources/eog/%{url_ver}/%{name}-%{version}.tar.xz
+# Patch to support compilation with libreport 0.5
+Patch0:		https://gitlab.gnome.org/GNOME/gnome-builder/-/merge_requests/486.patch
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool >= 0.40.0
