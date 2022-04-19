@@ -21,6 +21,7 @@ BuildRequires:	itstool
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(exempi-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(gi-docgen)
 BuildRequires:	pkgconfig(gio-2.0) >= 2.31.0
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.0
 BuildRequires:	pkgconfig(glib-2.0)
