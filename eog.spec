@@ -8,14 +8,12 @@
 
 Summary:	The Eye of GNOME image viewer
 Name:		eog
-Version:	41.1
-Release:	2
+Version:	42.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/projects/eog/
 Source0: 	http://ftp.gnome.org/pub/GNOME/sources/eog/%{url_ver}/%{name}-%{version}.tar.xz
-# Patch to support compilation with libportal 0.5
-Patch0:		https://gitlab.gnome.org/GNOME/eog/-/merge_requests/115.patch
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool >= 0.40.0
@@ -23,6 +21,7 @@ BuildRequires:	itstool
 BuildRequires:	jpeg-devel
 BuildRequires:	pkgconfig(exempi-2.0)
 BuildRequires:	pkgconfig(gdk-pixbuf-2.0)
+BuildRequires:	pkgconfig(gi-docgen)
 BuildRequires:	pkgconfig(gio-2.0) >= 2.31.0
 BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.31.0
 BuildRequires:	pkgconfig(glib-2.0)
@@ -39,6 +38,7 @@ BuildRequires:	pkgconfig(libexif)
 BuildRequires:	pkgconfig(libpeas-gtk-1.0)
 BuildRequires:	pkgconfig(librsvg-2.0)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libhandy-1)
 BuildRequires:	pkgconfig(libportal)
 BuildRequires:	pkgconfig(libportal-gtk3)
 BuildRequires:	pkgconfig(libportal-gtk4)
