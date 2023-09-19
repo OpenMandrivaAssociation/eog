@@ -8,12 +8,12 @@
 
 Summary:	The Eye of GNOME image viewer
 Name:		eog
-Version:	44.3
+Version:	45.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
-Url:		http://www.gnome.org/projects/eog/
-Source0: 	http://ftp.gnome.org/pub/GNOME/sources/eog/%{url_ver}/%{name}-%{version}.tar.xz
+Url:		https://www.gnome.org/projects/eog/
+Source0: 	https://ftp.gnome.org/pub/GNOME/sources/eog/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool >= 0.40.0
