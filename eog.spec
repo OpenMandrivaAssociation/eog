@@ -8,8 +8,8 @@
 
 Summary:	The Eye of GNOME image viewer
 Name:		eog
-Version:	47.0
-Release:	3
+Version:	49.1
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		https://www.gnome.org/projects/eog/
